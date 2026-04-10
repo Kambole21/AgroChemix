@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="{{url_for('static', filename='layout.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='parent.css')}}">
+
+<div id="productsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img"><img src="{{url_for('static', filename='images/max-care.jpg')}}" alt="🌍"></div>
+                            <div class="product-body">
+                                <div class="product-category">Fertilizer</div>
+                                <div class="product-name text-mute">MAX-CARE</div>
+                                <p class="product-desc">A balanced nutritional supplement that provides essential micro-nutrients to maintain general plant health.</p>
+                                <div class="product-footer">
+                                    <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                        <div class="product-img"><img src="{{url_for('static', filename='images/tuta-max.jpg')}}" alt="🪲"></div>
+                            <div class="product-body">
+                                <div class="product-category">Insecticides</div>
+                                <div class="product-name text-mute">TUTA-MAX</div>
+                                <p class="product-desc"> A specialized <i>Chlorfenapyr-based</i> insecticide specifically formulated to target the tomato leaf miner (Tuta absoluta).</p>
+                                <div class="product-footer">
+                                    <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img"><img src="{{url_for('static', filename='images/seed-max.jpg')}}" alt="🌱"></div>
+                            <div class="product-body">
+                                <div class="product-category">Seeds</div>
+                                <div class="product-name text-mute">SEED-MAX</div>
+                                <p class="product-desc">A specialized chemical treatment applied to seeds before planting to protect them from soil-borne diseases and early-season insect attacks.</p>
+                                <div class="product-footer">
+                                    <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img"><img src="{{url_for('static', filename='images/max-up.jpg')}}" alt=""></div>
+                            <div class="product-body">
+                                <div class="product-category">Herbicide</div>
+                                <div class="product-name text-mute">MAX-UP <small class="product-section text-mute">Pre planting</small></div>
+                                <p class="product-desc"> A non-selective, systemic foliar-applied herbicide used to control stubborn annual and perennial grasses and broad-leaved weeds.</p>
+                                <div class="product-footer">
+                                    <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="carousel-item">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                <div class="product-img"><img src="{{url_for('static', filename='images/max-up g.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">MAX-UP GRANULAR <small class="product-section text-mute">Pre planting</small></div>
+                        <p class="product-desc">A dry, water-soluble granule version of glyphosate offering the same total weed control in a concentrated, easy-to-transport form.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                <div class="product-img"><img src="{{url_for('static', filename='images/acetamectin-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">ACETAMACTIN-MAX</div>
+                        <p class="product-desc">A combination insecticide containing Acetamiprid and Abamectin to control sucking pests and mites simultaneously.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                <div class="product-img"><img src="{{url_for('static', filename='images/profeno-max.jpg')}}" alt="🦗"></div>
+                    <div class="product-body">
+                        <div class="product-category">Larvicides</div>
+                        <div class="product-name text-mute">PROFENO-MAX</div>
+                        <p class="product-desc"> A broad-spectrum organophosphate (Profenofos) used to control chewing and sucking pests, particularly effective against resistant bollworms.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img"><img src="{{url_for('static', filename='images/z-max.jpg')}}" alt="🍄"></div>
+                            <div class="product-body">
+                                <div class="product-category">Fungicide</div>
+                                <div class="product-name text-mute">Z-MAX <small class="product-section text-mute">Preventive</small></div>
+                                <p class="product-desc">A protective fungicide containing Mancozeb used to create a barrier on plant surfaces against various fungal infections.</p>
+                                <div class="product-footer">
+                                    <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#productsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+     
+
+</div>

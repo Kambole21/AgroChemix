@@ -1,0 +1,280 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <div class="hero-label">
+                    🌾 Zambia's Trusted Agro Input Partner
+                </div>
+                <h1 class="hero-title">
+                    Nourish Your Land,<br>
+                    <span class="accent">Grow Your Future</span>
+                </h1>
+                <p class="hero-desc">
+                    AgroChemix delivers premium fertilizers, pesticides, seeds, and expert agricultural services — empowering Zambian farmers to achieve maximum yields, sustainably.
+                </p>
+                <div class="hero-cta">
+                    <a href="{{ url_for('products.products_page') }}" class="btn-primary-agro">
+                        <i class="fas fa-seedling"></i> Explore Products
+                    </a>
+                    <a href="{{ url_for('contact.contact_page') }}" class="btn-outline-agro">
+                        <i class="fas fa-headset"></i> Talk to an Expert
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="2500" data-suffix="+">0+</div>
+                        <div class="stat-label">Farmers Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="150" data-suffix="+">0+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10">0</div>
+                        <div class="stat-label">Provinces</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-image-col">
+                <div class="hero-img-frame">
+                    <div class="hero-img-main"> <img src="{{url_for('static', filename = 'images/farmer-maize.jpg')}}" alt=""> </div>
+                    <div class="hero-badge">
+                        <strong>98%</strong>
+                        <span>Customer Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<section class="features-strip">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="row g-3">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="{{url_for('static', filename='icons/delivery-fast.svg')}}" alt=""></div>
+                    <div class="feature-text">
+                        <h6>Nationwide Delivery</h6>
+                        <p>Fast, reliable delivery to all provinces across Zambia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="{{url_for('static', filename='icons/microscope.svg')}}" alt=""></div>
+                    <div class="feature-text">
+                        <h6>Certified Quality</h6>
+                        <p>All products are ZEMA-registered and quality-tested.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="{{url_for('static', filename='icons/agronomist.svg')}}" alt=""></div>
+                    <div class="feature-text">
+                        <h6>Expert Agronomists</h6>
+                        <p>Professional advice tailored to your crops and soil type.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="{{url_for('static', filename = 'icons/cash.svg')}}" alt=""></div>
+                    <div class="feature-text">
+                        <h6>Competitive Pricing</h6>
+                        <p>Best value agro inputs with flexible payment options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section class="about-section">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="about-img-wrap">
+                    <div class="about-img-main"><img src="{{url_for('static', filename='images/farm-phone.jpg')}}" alt="" id="farm-phone"></div>
+                    <div class="about-img-accent">
+                        <strong>10+</strong>
+                        <span>Years of Expert Experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="section-label">About AgroChemix</div>
+                <h2 class="section-title">Rooted in Agriculture,<br><span>Driven by Farmers</span></h2>
+                <p class="section-subtitle mb-4">AgroChemix has been Zambia's go-to partner for quality agro inputs. We understand the challenges farmers face — and we're here with solutions that work in Zambian soils and climates.</p>
+                <ul class="check-list">
+                    <li>ZEMA-registered and certified agro input supplier</li>
+                    <li>Partnerships with leading global agricultural brands</li>
+                    <li>Dedicated team of certified agronomists and field officers</li>
+                    <li>Serving smallholder and commercial farmers across all 10 provinces</li>
+                    <li>Committed to sustainable and climate-smart agriculture</li>
+                </ul>
+                <div class="mt-4">
+                    <a href="{{ url_for('about_us.about_page') }}" class="btn-primary-agro">
+                        <i class="fas fa-arrow-right"></i> Learn Our Story
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS PREVIEW -->
+<section class="products-section">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="text-center mb-5">
+            <div class="section-label mx-auto">Our Products</div>
+            <h2 class="section-title">Quality <span>Agro Inputs</span> for Every Need</h2>
+            <p class="section-subtitle mx-auto">From fertilizers to certified seeds, we stock everything your farm needs to thrive this season.</p>
+        </div>
+        {% include 'carousel.html' %}
+        <div class="text-center mt-5">
+            <a href="{{ url_for('products.products_page') }}" class="btn-primary-agro">
+                <i class="fas fa-th-large"></i> View Full Catalogue
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="services-section">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="text-center mb-5">
+            <div class="section-label mx-auto">Our Services</div>
+            <h2 class="section-title">Beyond Products — <span>We Support Your Success</span></h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon"><img src="{{url_for('static', filename='gifs/test.gif')}}" alt="" class="icon-gif-home"></div>
+                    <h5 class="service-title">Soil Testing & Analysis</h5>
+                    <p class="service-desc">Professional soil sampling and lab analysis to determine nutrient deficiencies and recommend the right fertilizer programme.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon"><img src="{{url_for('static', filename='gifs/mentorship.gif')}}" alt="" class="icon-gif-home"></div>
+                    <h5 class="service-title">Agronomic Advisory</h5>
+                    <p class="service-desc">On-farm visits and personalised crop management advice from our team of experienced certified agronomists.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon"><img src="{{url_for('static', filename='gifs/delivery-truck.gif')}}" alt="" class="icon-gif-home"></div>
+                    <h5 class="service-title">Bulk Supply & Contracts</h5>
+                    <p class="service-desc">Tailored supply contracts for commercial farms, cooperatives, and government programmes with competitive bulk pricing.</p>
+                </div>
+            </div>
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h5 class="service-title">Farmer Training</h5>
+                    <p class="service-desc">Practical workshops and field demonstration days on modern farming techniques, pesticide safety, and crop management.</p>
+                </div>
+            </div> -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon"><img src="{{url_for('static', filename='gifs/sprayer.gif')}}" alt="" class="icon-gif-home"></div>
+                    <h5 class="service-title">Spray & Application Services</h5>
+                    <p class="service-desc">Professional pesticide and fertilizer application services using calibrated equipment for optimal results and safety.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon"><img src="{{url_for('static', filename='gifs/deal.gif')}}" alt="" class="icon-gif-home"></div>
+                    <h5 class="service-title">Input Credit Schemes</h5>
+                    <p class="service-desc">Flexible crop input financing solutions for smallholder farmers through partnership with select financial institutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <h2 class="cta-title">Ready to <span class="gold">Transform Your Harvest?</span></h2>
+                <p class="cta-desc">Get in touch with our agronomy team today. Whether you're a smallholder or commercial farmer — we have a solution that fits your needs and budget.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="{{ url_for('contact.contact_page') }}" class="btn-gold">
+                        <i class="fas fa-phone-alt"></i> Contact Us Today
+                    </a>
+                    <a href="{{ url_for('products.products_page') }}" class="btn-outline-agro">
+                        <i class="fas fa-book-open"></i> View Catalogue
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-lg-end">
+                <div style="font-size:7rem; opacity:0.15; line-height:1;">🌾</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="text-center mb-5">
+            <div class="section-label mx-auto">Testimonials</div>
+            <h2 class="section-title">Trusted by <span>Zambian Farmers</span></h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Since using AgroChemix's D-Compound and getting proper soil testing done, my maize yield has gone from 20 bags to over 60 bags per hectare. Truly life-changing."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="{{url_for('static', filename='icons/farmer-male.svg')}}" alt="" class="value-icon-home"></div>
+                        <div>
+                            <div class="author-name">Eleazer Daka</div>
+                            <div class="author-loc">📍 Kapiri, Central Province</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The agronomists from AgroChemix visited my vegetable farm twice this season. Their advice on integrated pest management saved me from a total crop loss."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="{{url_for('static', filename='icons/farmer-male.svg')}}" alt="" class="value-icon-home"></div>
+                        <div>
+                            <div class="author-name">Chipeke Mwaba</div>
+                            <div class="author-loc">📍 Mumbwa, Central Province</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p class="testimonial-text">"I've been buying my farm chemicals from AgroChemix for five years. The prices are fair and delivery to Eastern Province is always on time before the rains."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="{{url_for('static', filename='icons/farmer-female.svg')}}" alt="" class="value-icon-home"></div>
+                        <div>
+                            <div class="author-name">Thandiwe Mutale</div>
+                            <div class="author-loc">📍 Chipata, Eastern Province</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

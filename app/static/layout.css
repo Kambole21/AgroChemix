@@ -1,0 +1,114 @@
+#logo-id{
+
+    height:55px;
+    width: 50px;
+    border-radius: 35px;
+
+}
+
+.product-img img{
+
+    width: fit-content;
+}
+
+.brand-text .preamble{
+    font-size: x-small;
+    color: #1A520D;
+}
+.product-section{
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: gray;
+    padding-bottom: 2px;
+}
+
+.value-card img{
+
+    height:75px;
+    width: 70px;
+    align-items: center;
+
+}
+
+.carousel .team-card{
+    max-width:fit-content;
+    margin:auto;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.team-card img{
+
+    height:105px;
+    width: 100px;
+    align-items: center;
+
+}
+
+.icon-gif{
+
+    height:135px;
+    width: 135px;
+    align-items: center;
+
+}
+.icon-gif-home{
+
+    height:67px;
+    width: 62px;
+
+}
+
+.carousel .product-card{
+    max-width:fit-content;
+    margin:auto;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.carousel button{
+    color: var(--green-dark);
+}
+#productsCarousel .carousel-control-prev,
+#productsCarousel .carousel-control-next{
+    width:5%;
+    opacity:1;
+}
+
+/* Control icons background */
+#productsCarousel .carousel-control-prev-icon,
+#productsCarousel .carousel-control-next-icon{
+    background-color: var(--green-dark);
+    border-radius:50%;
+    padding:20px;
+    background-size:60%;
+}
+
+/* Optional hover effect */
+#productsCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#productsCarousel .carousel-control-next:hover .carousel-control-next-icon{
+    background-color: #1f7a3a;
+}
+
+.logo-icon-nav{
+    width: 20px;
+    height: 20px;
+    border-radius:25px;
+}
+
+.footer-zema img{
+    width: 120px;
+    height: auto;
+}
+.footer-zari{
+    border-top: 3cm;
+    border-color: azure;
+}
+.footer-zari img{
+    width: 150px;
+    height: auto;
+}
+.footer-zari h5{
+    font-size: medium;
+}

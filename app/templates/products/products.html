@@ -1,0 +1,567 @@
+{% extends "layout.html" %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container-fluid px-4 px-md-5">
+        <p class="page-hero-label"><a href="{{ url_for('home.home_page') }}">Home</a> / Products</p>
+        <h1>Product Catalogue</h1>
+    </div>
+</section>
+
+<section class="products-page">
+    <div class="container-fluid px-4 px-md-5">
+
+        <!-- CATEGORY FILTER -->
+        <div class="category-tabs d-flex flex-wrap gap-2">
+            <button class="tab-btn active" data-category="all">All Products</button>
+            <button class="tab-btn" data-category="fertilizer">🌍 Fertilizers</button>
+            <button class="tab-btn" data-category="insecticides">🐜 insecticdes</button>
+            <button class="tab-btn" data-category="herbicide">🐛 Herbicide</button>
+            <button class="tab-btn" data-category="miticides">🪲 Miticides</button>
+            <button class="tab-btn" data-category="larvicides">Larvicides</button>
+            <button class="tab-btn" data-category="fungicide">🍄 Fungicides</button>
+            <button class="tab-btn" data-category="seed">🌽 Seeds</button>
+            <button class="tab-btn" data-category="surfactant">💧 Surfactant</button>
+            <button class="tab-btn" data-category="sprayer">🚿 Sprayer</button>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="row g-4" id="productsGrid">
+
+            <!-- FERTILIZERS -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="fertilizer">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/max-care.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Fertilizer</div>
+                        <div class="product-name text-mute">MAX-CARE</div>
+                        <p class="product-desc">A balanced nutritional supplement that provides essential micro-nutrients to maintain general plant health.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="fertilizer">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/max-fruiter.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Fertilizer</div>
+                        <div class="product-name text-mute">MAX-FRUITER</div>
+                        <p class="product-desc">A potassium-rich formula (NPK 10:5:40) applied during the flowering stage to increase fruit size, weight, and quality.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="fertilizer">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/max-grower.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Fertilizer</div>
+                        <div class="product-name text-mute">MAX-GROWER</div>
+                        <p class="product-desc">A high-nitrogen liquid fertilizer used to boost vegetative growth and green foliage in young plants.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="fertilizer">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/boostract.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Fertilizer</div>
+                        <div class="product-name text-mute">BOOSTRUCT</div>
+                        <p class="product-desc">A specialized growth stimulant designed to help plants recover from stress and improve overall vigor.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERBICIDES -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/max-up.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">MAX-UP <small class="product-section text-mute">Pre planting</small></div>
+                        <p class="product-desc"> A non-selective, systemic foliar-applied herbicide used to control stubborn annual and perennial grasses and broad-leaved weeds.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/max-up g.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">MAX-UP GRANULAR <small class="product-section text-mute">Pre planting</small></div>
+                        <p class="product-desc">A dry, water-soluble granule version of glyphosate offering the same total weed control in a concentrated, easy-to-transport form.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/para-max.avif')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">PARA-MAX <small class="product-section text-mute">Pre planting</small></div>
+                        <p class="product-desc">A fast-acting contact herbicide (Paraquat) that "burns down" weeds on contact to create a clean seedbed.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/aceto-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">ACETO-MAX<small class="product-section text-mute"> Pre Emengence</small></div>
+                        <p class="product-desc">A soil-applied herbicide used to prevent the germination of annual grasses and certain broadleaf weeds.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/atra-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">ATRA-MAX<small class="product-section text-mute"> Pre Emengence</small></div>
+                        <p class="product-desc">A selective residual herbicide (Atrazine) used to control weeds in maize and sorghum before they poke through the soil.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/maize-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">MAIZE-MAX<small class="product-section text-mute"> Post Emengence</small></div>
+                        <p class="product-desc">A selective herbicide designed to kill weeds growing specifically within established maize crops without harming the corn.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/soya-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">SOYA-MAX<small class="product-section text-mute"> Post Emengence</small></div>
+                        <p class="product-desc">A specialized formula used to control grasses and broadleaf weeds in standing soybean crops.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/beans-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">BEANS-MAX<small class="product-section text-mute"> Post Emengence</small></div>
+                        <p class="product-desc">A post-emergence solution tailored to eliminate competing weeds in various bean varieties during the growing phase.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/legume-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">LEGUME-MAX<small class="product-section text-mute"> Post Emengence</small></div>
+                        <p class="product-desc">A broad-spectrum selective herbicide safe for use across different leguminous crops to ensure clean fields after emergence..</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6 product-item" data-category="herbicide">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/veggie-max.jpg')}}" alt=""></div>
+                    <div class="product-body">
+                        <div class="product-category">Herbicide</div>
+                        <div class="product-name text-mute">VEGGIE-MAX<small class="product-section text-mute"> Post Emengence</small></div>
+                        <p class="product-desc"> A selective post-emergence herbicide used to control grass weeds in vegetable gardens and horticultural crops.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSECTICDES -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/dd-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">DD-MAX</div>
+                        <p class="product-desc">A broad-spectrum insecticide with quick knockdown and residual action, often used for general pests like cockroaches, ants, and spiders.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/acetamectin-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">ACETAMACTIN-MAX</div>
+                        <p class="product-desc">A combination insecticide containing Acetamiprid and Abamectin to control sucking pests and mites simultaneously.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/tuta-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">TUTA-MAX</div>
+                        <p class="product-desc"> A specialized <i>Chlorfenapyr-based</i> insecticide specifically formulated to target the tomato leaf miner (Tuta absoluta).</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/imi-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">IMI-MAX</div>
+                        <p class="product-desc">A systemic neonicotinoid containing <i>Imidacloprid</i> used to manage aphids, whiteflies, and other sap-sucking insects.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/lara-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">LARA-MAX</div>
+                        <p class="product-desc"> A potent insecticide, typically based on <i>Lambda-cyhalothrin</i>, used for rapid control of chewing and sucking pests across various crops.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/cyper-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">CYPER-MAX</div>
+                        <p class="product-desc">A contact insecticide featuring Cypermethrin for the knockdown of a wide range of crawling and flying insects.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/termi-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">TERMI-MAX</div>
+                        <p class="product-desc">A specialized soil or surface treatment designed specifically to eliminate termite colonies and protect wooden structures.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/iron-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">IRON-MAX</div>
+                        <p class="product-desc">A molluscicide or specialized treatment used to control slugs and snails in gardens and agricultural fields.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="insecticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/caterpillar-max.jpg')}}" alt="🪲"></div>
+                    <div class="product-body">
+                        <div class="product-category">Insecticides</div>
+                        <div class="product-name text-mute">CATERPILLAR-MAX</div>
+                        <p class="product-desc">A targeted insecticide formulated to eliminate caterpillars and lepidoptera larvae that feed on foliage.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MITICIDES -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="miticides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/mectin-max.jpg')}}" alt="🦗"></div>
+                    <div class="product-body">
+                        <div class="product-category">Miticides</div>
+                        <div class="product-name text-mute">MECTIN-MAX</div>
+                        <p class="product-desc">A powerful miticide and insecticide containing Abamectin, designed to control mites, leafminers, and various sucking pests through contact and stomach action.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LARVICIDES -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="larvicides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/lepo-max.jpg')}}" alt="🦗"></div>
+                    <div class="product-body">
+                        <div class="product-category">Larvicides</div>
+                        <div class="product-name text-mute">LEPO-MAX</div>
+                        <p class="product-desc">A specialized insecticide containing Emamectin benzoate designed to control lepidopteran larvae like Fall Armyworm and diamondback moths.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="larvicides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/profeno-max.jpg')}}" alt="🦗"></div>
+                    <div class="product-body">
+                        <div class="product-category">Larvicides</div>
+                        <div class="product-name text-mute">PROFENO-MAX</div>
+                        <p class="product-desc"> A broad-spectrum organophosphate (Profenofos) used to control chewing and sucking pests, particularly effective against resistant bollworms.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="larvicides">
+                <div class="product-card h-100">
+                <div class="product-img"><img src="{{url_for('static', filename='images/larva-max.jpg')}}" alt="🦗"></div>
+                    <div class="product-body">
+                        <div class="product-category">Larvicides</div>
+                        <div class="product-name text-mute">LARVA-MAX</div>
+                        <p class="product-desc">A potent solution specifically formulated to target the larval stage of insects before they can mature and cause significant crop damage.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FUNGICIDES -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="fungicide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/z-max.jpg')}}" alt="🍄"></div>
+                    <div class="product-body">
+                        <div class="product-category">Fungicide</div>
+                        <div class="product-name text-mute">Z-MAX <small class="product-section text-mute">Preventive</small></div>
+                        <p class="product-desc">A protective fungicide containing Mancozeb used to create a barrier on plant surfaces against various fungal infections.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="fungicide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/chloromax.jpg')}}" alt="🍄"></div>
+                    <div class="product-body">
+                        <div class="product-category">Fungicide</div>
+                        <div class="product-name text-mute">CHLOROMAX <small class="product-section text-mute">Preventive</small></div>
+                        <p class="product-desc">A broad-spectrum contact fungicide (Chlorothalonil) that prevents fungal spores from germinating on the leaf.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="fungicide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/blight-max.jpg')}}" alt="🍄"></div>
+                    <div class="product-body">
+                        <div class="product-category">Fungicide</div>
+                        <div class="product-name text-mute">BLIGHT-MAX <small class="product-section text-mute">Combination</small></div>
+                        <p class="product-desc">A specialized mix of Metalaxyl and Mancozeb designed to both prevent and treat early and late blight in crops.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="fungicide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/spot-max.jpg')}}" alt="🍄"></div>
+                    <div class="product-body">
+                        <div class="product-category">Fungicide</div>
+                        <div class="product-name text-mute">SPOT-MAX <small class="product-section text-mute">Combination</small></div>
+                        <p class="product-desc">A dual-action fungicide combining Azoxystrobin and Difenoconazole to control leaf spots, rusts, and powdery mildew.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 product-item" data-category="fungicide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/fungu.jpg')}}" alt="🍄"></div>
+                    <div class="product-body">
+                        <div class="product-category">Fungicide</div>
+                        <div class="product-name text-mute">FUNGU-MAX <small class="product-section text-mute">Combination</small></div>
+                        <p class="product-desc">A broad-spectrum systemic and contact combination used to manage a wide variety of persistent fungal diseases.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEEDS -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="seed">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/seed-max.jpg')}}" alt="🌱"></div>
+                    <div class="product-body">
+                        <div class="product-category">Seeds</div>
+                        <div class="product-name text-mute">SEED-MAX</div>
+                        <p class="product-desc">A specialized chemical treatment applied to seeds before planting to protect them from soil-borne diseases and early-season insect attacks.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- RODENTICIDES -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="rodenticide">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/push-out.jpg')}}" alt="🌱"></div>
+                    <div class="product-body">
+                        <div class="product-category">Rodenticide</div>
+                        <div class="product-name text-mute">PUSH-OUT</div>
+                        <p class="product-desc"> A highly palatable, weather-resistant bait designed to effectively eliminate rats and mice with a single feeding.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SURFACTANT -->
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="surfactant">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/cover-max.png')}}" alt="💧"></div>
+                    <div class="product-body">
+                        <div class="product-category">Surfactant</div>
+                        <div class="product-name text-mute">COVER-MAX</div>
+                        <p class="product-desc">A wetting and spreading agent added to spray mixtures to improve leaf coverage and chemical penetration.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPRAYER -->
+            <div class="col-lg-3 col-md-6 product-item" data-category="sprayer">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/2l.jpg')}}" alt="🚿"></div>
+                    <div class="product-body">
+                        <div class="product-category">Sprayer</div>
+                        <div class="product-name text-mute">TECTO-2L</div>
+                        <p class="product-desc">A compact, hand-held pressure sprayer ideal for small-scale applications in nurseries or home gardens.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 product-item" data-category="sprayer">
+                <div class="product-card h-100">
+                    <div class="product-img"><img src="{{url_for('static', filename='images/16l.jpg')}}" alt="🚿"></div>
+                    <div class="product-body">
+                        <div class="product-category">Sprayer</div>
+                        <div class="product-name text-mute">PULSE-16L</div>
+                        <p class="product-desc">A durable knapsack sprayer with a large capacity designed for efficient chemical application over larger field areas.</p>
+                        <div class="product-footer">
+                            <a href="{{ url_for('contact.contact_page') }}" class="btn-enquire">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BULK ORDER CTA -->
+        <div class="mt-5 p-4 p-md-5 rounded-4" style="background:linear-gradient(135deg, var(--green-dark), var(--green)); color:white; position:relative; overflow:hidden;">
+            <div style="position:absolute; right:40px; top:50%; transform:translateY(-50%); font-size:8rem; opacity:0.08;">📦</div>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 style="font-family:'Playfair Display',serif; color:white; margin-bottom:10px;">Need a Bulk Order or Custom Quote?</h3>
+                    <p style="color:rgba(255,255,255,0.78); margin:0; font-size:1rem;">We offer competitive pricing for cooperatives, commercial farms, and government programmes. Get in touch with our sales team for a personalised quotation.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="{{ url_for('contact.contact_page') }}" class="btn-gold">
+                        <i class="fas fa-file-invoice"></i> Request Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

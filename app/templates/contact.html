@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container-fluid px-4 px-md-5">
+        <p class="page-hero-label"><a href="{{ url_for('home.home_page') }}">Home</a> / Contact</p>
+        <h1>Contact Us</h1>
+    </div>
+</section>
+
+<section class="contact-page">
+    <div class="container-fluid px-4 px-md-5">
+
+        <div class="row g-5 mb-5">
+
+            <!-- CONTACT INFO -->
+            <div class="col-lg-4">
+                <div class="contact-info-card">
+                    <h3 class="contact-info-title">Get In Touch</h3>
+                    <p class="contact-info-sub">We'd love to hear from you. Our team responds within 24 hours on working days.</p>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="contact-item-label">Office Address</div>
+                            <div class="contact-item-value">Plot 7252M Makeni, <br> Lusaka Zambia</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <div class="contact-item-label">Phone / WhatsApp</div>
+                            <div class="contact-item-value">+260978981223 <br> +260974685007 <br> +260973917129</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="contact-item-label">Email</div>
+                            <div class="contact-item-value">andrew.mulenga@agrochemix.info</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <div class="contact-item-label">Working Hours</div>
+                            <div class="contact-item-value">Monday – Friday: 08:00 – 17:00<br>Saturday: 08:00 – 13:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="col-lg-8">
+                <div class="contact-form-card">
+                    <div class="mb-4">
+                        <div class="section-label">Send a Message</div>
+                        <h3 style="font-family:'Playfair Display',serif; margin:0;">How Can We <span style="color:var(--green);">Help You?</span></h3>
+                    </div>
+
+                    <!-- FLASH MESSAGES -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show mb-4" role="alert">
+                                    {% if category == 'success' %}
+                                        <i class="fas fa-check-circle me-2"></i>
+                                    {% else %}
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                    {% endif %}
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form method="POST" action="{{ url_for('contact.contact_page') }}">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" name="name" class="form-control" placeholder="e.g. John Mwale" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number *</label>
+                                <input type="tel" name="phone" class="form-control" placeholder="e.g. +260 97 123 4567" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" name="email" class="form-control" placeholder="your@email.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Province / Location</label>
+                                <select name="province" class="form-select">
+                                    <option value="" disabled selected>Select your province</option>
+                                    <option>Lusaka</option>
+                                    <option>Central</option>
+                                    <option>Copperbelt</option>
+                                    <option>Eastern</option>
+                                    <option>Luapula</option>
+                                    <option>Muchinga</option>
+                                    <option>Northern</option>
+                                    <option>North-Western</option>
+                                    <option>Southern</option>
+                                    <option>Western</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Enquiry Type *</label>
+                                <select name="enquiry_type" class="form-select" required>
+                                    <option value="" disabled selected>Select enquiry type</option>
+                                    <option>Product Pricing & Availability</option>
+                                    <option>Soil Testing Service</option>
+                                    <option>Agronomic Advisory</option>
+                                    <option>Bulk Order / Tender</option>
+                                    <option>Farmer Training</option>
+                                    <option>Spray Services</option>
+                                    <option>Input Credit Scheme</option>
+                                    <option>General Enquiry</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Farm Size (Hectares)</label>
+                                <select name="farm_size" class="form-select">
+                                    <option value="" disabled selected>Select farm size</option>
+                                    <option>Less than 1 ha</option>
+                                    <option>1 – 5 ha</option>
+                                    <option>5 – 20 ha</option>
+                                    <option>20 – 100 ha</option>
+                                    <option>100+ ha</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Your Message *</label>
+                                <textarea name="message" class="form-control" rows="5" placeholder="Please describe your enquiry in as much detail as possible. Include specific products, quantities, crops, or challenges you're facing..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <input type="checkbox" id="consent" name="consent" style="width:16px;height:16px;accent-color:var(--green);" required>
+                                    <label for="consent" style="font-size:0.85rem; color:var(--text-light); cursor:pointer;">I agree to be contacted by AgroChemix regarding my enquiry.</label>
+                                </div>
+                                <button type="submit" class="btn-primary-agro w-100 justify-content-center" style="padding:15px;">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

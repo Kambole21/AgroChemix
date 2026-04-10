@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='layout.css')}}">
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container-fluid px-4 px-md-5">
+        <p class="page-hero-label"><a href="{{ url_for('home.home_page') }}">Home</a> / Services</p>
+        <h1>Our Services</h1>
+    </div>
+</section>
+
+<section class="services-page">
+    <div class="container-fluid px-4 px-md-5">
+
+        <!-- INTRO -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-7 text-center">
+                <div class="section-label mx-auto">What We Offer</div>
+                <h2 class="section-title">More Than Just <span>Products</span></h2>
+                <p class="section-subtitle mx-auto">Our services are designed to support farmers at every stage of the growing season — from soil preparation through to post-harvest advice.</p>
+            </div>
+        </div>
+
+        <!-- SERVICES DETAIL CARDS -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-icon"><img src="{{url_for('static', filename='gifs/test.gif')}}" alt="" class="icon-gif"></span>
+                        <h4 class="service-detail-title" style="color: var(--green-dark);">Soil Testing & Analysis</h4>
+                    </div>
+                    <div class="service-detail-body">
+                        <p class="service-detail-desc">Understanding your soil is the foundation of a successful crop. Our certified lab provides comprehensive soil testing and actionable fertilizer recommendations.</p>
+                        <ul class="service-bullets">
+                            <li>Soil pH, macronutrient and micronutrient analysis</li>
+                            <li>Organic matter and cation exchange capacity testing</li>
+                            <li>Written fertilizer prescription for your specific crop</li>
+                            <li>Follow-up agronomist consultation included</li>
+                            <li>Results within 5–7 working days</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-icon"><img src="{{url_for('static', filename='gifs/mentorship.gif')}}" alt="" class="icon-gif"></span>
+                        <h4 class="service-detail-title" style="color: var(--green-dark);">Agronomic Advisory</h4>
+                    </div>
+                    <div class="service-detail-body">
+                        <p class="service-detail-desc">Our team of certified agronomists provides personalised, on-farm consultancy to help you get the most from your land and investment.</p>
+                        <ul class="service-bullets">
+                            <li>Farm visits and crop monitoring throughout the season</li>
+                            <li>Integrated pest and disease management planning</li>
+                            <li>Fertilizer programme development and review</li>
+                            <li>Irrigation and water management advice</li>
+                            <li>Crop budgeting and input planning support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-icon"><img src="{{url_for('static', filename='gifs/delivery-truck.gif')}}" alt="" class="icon-gif"></span>
+                        <h4 class="service-detail-title" style="color: var(--green-dark);">Bulk Supply & Contracts</h4>
+                    </div>
+                    <div class="service-detail-body">
+                        <p class="service-detail-desc">AgroChemix is a trusted partner for commercial farms, farmer cooperatives, NGOs, and government agricultural programmes requiring reliable bulk input supply.</p>
+                        <ul class="service-bullets">
+                            <li>Competitive pricing on bulk orders of 5+ tonnes</li>
+                            <li>Supply contracts for the full growing season</li>
+                            <li>Warehousing and phased delivery available</li>
+                            <li>Documentation support for tender requirements</li>
+                            <li>FIFO stock management and quality guarantees</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card">
+                    <div class="service-detail-header" style="background:linear-gradient(135deg, #4a2060, #7a3da0);">
+                        <span class="service-detail-icon">🎓</span>
+                        <h4 class="service-detail-title">Farmer Training Programmes</h4>
+                    </div>
+                    <div class="service-detail-body">
+                        <p class="service-detail-desc">Knowledge is the best input. We run regular training workshops and field days designed to improve farming practices at all scales.</p>
+                        <ul class="service-bullets">
+                            <li>Conservation farming and minimum tillage techniques</li>
+                            <li>Safe pesticide handling and application training</li>
+                            <li>Post-harvest handling and storage</li>
+                            <li>Climate-smart and resilience farming approaches</li>
+                            <li>Farmer-to-farmer demonstration field days</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-icon"><img src="{{url_for('static', filename='gifs/sprayer.gif')}}" alt="" class="icon-gif"></span>
+                        <h4 class="service-detail-title" style="color: var(--green-dark);">Spray & Application Services</h4>
+                    </div>
+                    <div class="service-detail-body">
+                        <p class="service-detail-desc">Not every farmer has the equipment or expertise for precise chemical application. Our certified operators ensure safe, effective results.</p>
+                        <ul class="service-bullets">
+                            <li>Herbicide, pesticide and foliar application services</li>
+                            <li>Calibrated spray equipment for uniform coverage</li>
+                            <li>Operator safety and PPE compliance guaranteed</li>
+                            <li>Fertilizer broadcasting and topdressing services</li>
+                            <li>Available for smallholder and commercial scale</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-detail-card">
+                    <div class="service-detail-header">
+                        <span class="service-detail-icon"><img src="{{url_for('static', filename='gifs/deal.gif')}}" alt="" class="icon-gif"></span>
+                        <h4 class="service-detail-title" style="color: var(--green-dark);">Input Credit & Financing</h4>
+                    </div>
+                    <div class="service-detail-body input-card">
+                        <p class="service-detail-desc">Access to inputs shouldn't be limited by cash flow. We've partnered with financial institutions to provide flexible input financing for qualifying farmers.</p>
+                        <ul class="service-bullets">
+                            <li>Seasonal input credit for registered farmers</li>
+                            <li>Crop-linked repayment through harvest proceeds</li>
+                            <li>Group-based lending for cooperatives and clubs</li>
+                            <li>Simple application process with fast approval</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICE PROCESS -->
+        <div class="p-4 p-md-5 rounded-4 mb-5" style="background:var(--off-white);">
+            <div class="text-center mb-5">
+                <div class="section-label mx-auto">How It Works</div>
+                <h3 class="section-title">Getting Started is <span>Simple</span></h3>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3">
+                        <div style="width:60px;height:60px;background:var(--green);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:900;margin:0 auto 16px;">1</div>
+                        <h6 style="font-weight:700;">Contact Us</h6>
+                        <p style="font-size:0.88rem;color:var(--text-light);">Call, WhatsApp or fill in our online contact form to describe your needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3">
+                        <div style="width:60px;height:60px;background:var(--gold);color:var(--green-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:900;margin:0 auto 16px;">2</div>
+                        <h6 style="font-weight:700;">Farm Assessment</h6>
+                        <p style="font-size:0.88rem;color:var(--text-light);">Our agronomist visits or consults with you to understand your farm and goals.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3">
+                        <div style="width:60px;height:60px;background:var(--green);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:900;margin:0 auto 16px;">3</div>
+                        <h6 style="font-weight:700;">Custom Solution</h6>
+                        <p style="font-size:0.88rem;color:var(--text-light);">We recommend the right products and services tailored to your specific situation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3">
+                        <div style="width:60px;height:60px;background:var(--gold);color:var(--green-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-family:'Playfair Display',serif;font-weight:900;margin:0 auto 16px;">4</div>
+                        <h6 style="font-weight:700;">Ongoing Support</h6>
+                        <p style="font-size:0.88rem;color:var(--text-light);">We follow up throughout the season to ensure you get the best results from your investment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center">
+            <h3 style="font-family:'Playfair Display',serif; margin-bottom:16px;">Ready to Get Started?</h3>
+            <p style="color:var(--text-light); margin-bottom:28px; max-width:500px; margin-left:auto; margin-right:auto;">Contact our team today and let's build a solution that works for your farm.</p>
+            <a href="{{ url_for('contact.contact_page') }}" class="btn-primary-agro">
+                <i class="fas fa-phone-alt"></i> Get in Touch
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

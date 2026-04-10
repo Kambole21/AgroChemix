@@ -1,0 +1,379 @@
+{% extends "layout.html" %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='layout.css')}}">
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container-fluid px-4 px-md-5">
+        <p class="page-hero-label"><a href="{{ url_for('home.home_page') }}">Home</a> / About Us</p>
+        <h1>About AgroChemix</h1>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="py-5 mt-4">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="section-label">Comapny Overview</div>
+                <h2 class="section-title">Grow More<span><p>Farm Smarter </p></span></h2>
+                <p style="color:var(--text-mid); font-size:1rem; line-height:1.8; margin-bottom:16px;">
+                AgroChemix Solutions Limited Is an agro-input solutions company
+                dedicated to improving agricultural productivity through the supply of high-quality
+                agrochemicals and crop nutrition products. The company focuses on supporting farmers,
+                agribusinesses, and distributors with reliable, effective, and affordable solutions tailored
+                to local agricultural conditions.
+            </p>
+                <p style="color:var(--text-mid); font-size:1rem; line-height:1.8; margin-bottom:28px;">
+                With a strong emphasis on quality, compliance, and sustainability, AgroChemix Solutions
+                Limited aims to contribute meaningfully to food security, farm profitability, and the longterm
+                development of the agricultural sector. By combining quality products, technical
+                insight, and market-driven solutions, AgroChemix Solutions Limited helps farmers grow
+                more, farm smarter, and achieve better returns.
+                </p>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="p-3 rounded-3" style="background:var(--green-pale); border-left:4px solid var(--green);">
+                            <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green);">🎯</div>
+                            <h6 style="font-weight:700; margin:8px 0 6px;">Our Mission</h6>
+                            <p style="font-size:0.85rem; color:var(--text-light); margin:0;">To provide effective, high-quality agrochemical and crop nutrition solutions that enhance
+                            agricultural productivity while promoting responsible and sustainable farming practices.
+                        </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 rounded-3" style="background:var(--gold-pale); border-left:4px solid var(--gold);">
+                            <div style="font-size:2rem;">🌍</div>
+                            <h6 style="font-weight:700; margin:8px 0 6px;">Our Vision</h6>
+                            <p style="font-size:0.85rem; color:var(--text-light); margin:0;">To become a trusted and leading agro-input solutions provider in the region, recognized for
+                            quality products, innovation, and commitment to farmer success
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="text-center p-4 rounded-3" style="background:var(--green); color:white;">
+                            <div style="font-size:2.5rem; font-family:'Playfair Display',serif; font-weight:900;">2500+</div>
+                            <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Farmers Served</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center p-4 rounded-3" style="background:var(--gold);">
+                            <div style="font-size:2.5rem; font-family:'Playfair Display',serif; font-weight:900; color:var(--green-dark);">150+</div>
+                            <div style="font-size:0.85rem; color:var(--green-dark); opacity:0.8; margin-top:4px;">Products Stocked</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center p-4 rounded-3" style="background:var(--off-white);">
+                            <div style="font-size:2.5rem; font-family:'Playfair Display',serif; font-weight:900; color:var(--green);">10+</div>
+                            <div style="font-size:0.85rem; color:var(--text-light); margin-top:4px;">Years of Experienced Experts</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center p-4 rounded-3" style="background:var(--off-white);">
+                            <div style="font-size:2.5rem; font-family:'Playfair Display',serif; font-weight:900; color:var(--green);">10</div>
+                            <div style="font-size:0.85rem; color:var(--text-light); margin-top:4px;">Provinces Covered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section" style="background:var(--off-white); padding:80px 0;">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="text-center mb-5">
+            <div class="section-label mx-auto">What Drives Us</div>
+            <h2 class="section-title">Our Core <span>Values</span></h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card" data-bs-toggle="modal" data-bs-target="#ProductionModal" style="cursor: pointer;">
+                    <span class="value-icon"><img src="{{url_for('static', filename='icons/solutions.svg')}}" alt=""></span>
+                    <h5 class="value-title">Products & Solutions</h5>
+                    <p class="value-desc">AgroChemix Solutions Limited provides high-quality crop protection, nutrition, and tailored agricultural inputs backed by expert advisory support, emphasizing regulatory compliance and effective application.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card" data-bs-toggle="modal" data-bs-target="#commitmentResearch" style="cursor: pointer;">
+                    <span class="value-icon"><img src="{{url_for('static', filename='icons/loyalty.svg')}}" alt=""></span>
+                    <h5 class="value-title">Commitment to Quality & Research</h5>
+                    <p class="value-desc">From product quality to customer service, we hold ourselves to the highest standard in everything we do.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card" data-bs-toggle="modal" data-bs-target="#valueProposition" style="cursor: pointer;">
+                    <span class="value-icon"><img src="{{url_for('static', filename='icons/value-proposition.svg')}}" alt=""></span>
+                    <h5 class="value-title">Value Proposition</h5>
+                    <p class="value-desc">We promote responsible agro-chemical use, soil health preservation, and climate-smart farming across all our engagements.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card" data-bs-toggle="modal" data-bs-target="#whyChoose" style="cursor: pointer;">
+                    <span class="value-icon"><img src="{{url_for('static', filename='icons/why-2.svg')}}" alt=""></span>
+                    <h5 class="value-title">Why Choose AgroChemix?</h5>
+                    <p class="value-desc">Because AgroChemix provides premium, locally-tailored crop solutions and expert advisory built on quality, reliability, and regulatory excellence to ensure long-term farmer success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+    <div class="container-fluid px-4 px-md-5">
+
+        <div class="text-center mb-5">
+            <div class="section-label mx-auto">Leadership</div>
+            <h2 class="section-title">AgroChemix <span>Executive Team</span></h2>
+            <p class="section-subtitle mx-auto">
+                Our leadership team combines governance expertise, commercial strategy,
+                and agronomic knowledge to drive sustainable agricultural growth.
+            </p>
+        </div>
+
+        <div id="leadershipCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <!-- Patrick -->
+                <div class="carousel-item active">
+                    <div class="team-card text-center p-5">
+                        <div class="team-img mb-3"><img src="{{url_for('static', filename='icons/director.svg')}}" alt=""></div>
+                        <h4 class="team-name">Patrick Chimfwembe CHILUBA</h4>
+                        <div class="team-role">Executive Director | Governance & Strategy</div>
+
+                        <p class="team-bio mt-3">
+                            Senior governance, finance, and compliance executive with over
+                            30 years of multinational experience across Africa and Europe.
+                            Formerly with TotalEnergies and ExxonMobil where he led finance,
+                            governance, risk, and compliance frameworks across more than
+                            40 African subsidiaries.
+                        </p>
+
+                        <p class="team-bio">
+                            At AgroChemix he provides strategic direction, board-level oversight,
+                            and governance systems that support sustainable growth and investor
+                            confidence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Andrew -->
+                <div class="carousel-item">
+                    <div class="team-card text-center p-5">
+                        <div class="team-img mb-3"><img src="{{url_for('static', filename='icons/managing.svg')}}" alt=""></div>
+                        <h4 class="team-name">Andrew Muchinga MULENGA</h4>
+                        <div class="team-role">Managing Director | Commercial & Operations</div>
+
+                        <p class="team-bio mt-3">
+                            A commercial and operations leader with over 15 years of
+                            experience across agribusiness, FMCG, manufacturing,
+                            telecommunications, and energy sectors.
+                        </p>
+
+                        <p class="team-bio">
+                            Having held senior roles at TotalEnergies, Rubis Energy,
+                            BAT, SABMiller, Airtel Zambia, and Twyford Ceramics,
+                            he now leads AgroChemix’s commercial execution,
+                            operations, and market expansion strategy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Loveness -->
+                <div class="carousel-item">
+                    <div class="team-card text-center p-5">
+                        <div class="team-img mb-3"><img src="{{url_for('static', filename='icons/female-scientist.svg')}}" alt=""></div>
+                        <h4 class="team-name">Loveness KANGWA</h4>
+                        <div class="team-role">Head of Technical & Agribusiness | Agronomy</div>
+
+                        <p class="team-bio mt-3">
+                            Agronomist and agribusiness professional with over 10 years’
+                            experience in agricultural production, agronomy sales,
+                            and agricultural marketing.
+                        </p>
+
+                        <p class="team-bio">
+                            She has worked with Starke Ayres, Wellcrop Global,
+                            Exome Life Sciences, and the Food Reserve Agency.
+                            At AgroChemix she leads technical advisory services
+                            and productivity-focused agronomic solutions.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#leadershipCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#leadershipCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- modals -->
+<div class="modal fade" id="ProductionModal" tabindex="1">
+    <div class="modal-dialog container-fluid px-4 px-md-5 modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+            <h5 class="modal-title value-title">Production & Solution</h5>
+            <button type="buton" class="btn-close" data-bs-dismis="modal"></button>
+
+            </div>
+
+                    <div class="modal-body">
+            <p>
+                AgroChemix Solutions Limited offers a range of agricultural input products designed to support
+                crop health and yield optimization, including:
+
+            </p>
+
+            <ul>
+                <li> Crop protection products (herbicides, pesticides, and fungicides)</li>
+                <li> Fertilizers and soil nutrition products </li>
+                <li> Agricultural inputs tailored to local crop and soil conditions </li>
+                <li> Advisory support on product application and usage</li>
+                 
+            </ul>
+
+            <p>
+                All products are sourced and handled with a strong emphasis on quality, regulatory compliance,
+                and effectiveness.
+
+            </p>
+        </div>
+        </div>
+
+     </div>
+</div>
+
+<div class="modal fade" id="commitmentResearch" tabindex="1">
+    <div class="modal-dialog container-fluid px-4 px-md-5 modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+            <h5 class="modal-title value-title">Commitment To Qualit & Research</h5>
+            <button type="buton" class="btn-close" data-bs-dismis="modal"></button>
+
+            </div>
+
+                    <div class="modal-body">
+            <p>AgroChemix Solutions Limited is committed to ensuring that all products meet required quality
+                and safety standards. The company prioritizes:
+
+            </p>
+
+            <ul>
+                <li> Compliance with applicable regulatory requirements</li>
+                <li> Careful sourcing from reputable manufacturers and suppliers</li>
+                <li> Continuous review of product performance and market needs</li>
+                <li> Ongoing improvement of product offerings through research and market feedback</li>
+                 
+            </ul>
+
+            <p>
+                his commitment ensures that farmers receive reliable solutions that deliver consistent results.
+
+            </p>
+        </div>
+        </div>
+
+     </div>
+</div>
+
+<div class="modal fade" id="valueProposition" tabindex="1">
+    <div class="modal-dialog container-fluid px-4 px-md-5 modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+            <h5 class="modal-title value-title">Value Proposition</h5>
+            <button type="buton" class="btn-close" data-bs-dismis="modal"></button>
+
+            </div>
+
+                    <div class="modal-body">
+            <p>AgroChemix Solutions Limited delivers value by offering
+
+            </p>
+
+            <ul>
+                <li> High-quality, effective agricultural inputs</li>
+                <li> Products aligned with local farming needs and conditions</li>
+                <li> Competitive pricing without compromising quality</li>
+                <li> Reliable supply and professional service</li>
+                <li> A strong focus on compliance, transparency, and accountability</li>
+                 
+            </ul>
+        </div>
+        </div>
+
+     </div>
+</div>
+
+<div class="modal fade" id="whyChoose" tabindex="1">
+    <div class="modal-dialog container-fluid px-4 px-md-5 modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+            <h5 class="modal-title value-title">Why Choose AgroChemix?</h5>
+            <button type="buton" class="btn-close" data-bs-dismis="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+                <p>
+                   Because AgroChemix Solutions Limited stands out by providing reliable, high-quality products tailored to local farming needs while maintaining strict regulatory standards and a deep commitment to long-term farmer partnerships.
+                </p>
+
+                <ul>
+                    <li> Quality Assurance: Products sourced and managed with strict quality controls</li>
+                    <li> Reliability: Consistent supply and dependable service</li>
+                    <li> Industry Understanding: Solutions informed by local agricultural realities</li>
+                    <li> Compliance-Focused: Strong emphasis on regulatory and ethical standards</li>
+                    <li> Customer-Centric Approach: Commitment to long-term partnerships with farmers</li>
+                    
+                </ul>
+            </div>
+        </div>
+
+     </div>
+</div>
+
+<!-- PARTNERS
+<section class="py-5" style="background:var(--off-white);">
+    <div class="container-fluid px-4 px-md-5">
+        <div class="text-center mb-4">
+            <div class="section-label mx-auto">Our Partners</div>
+            <h3 class="section-title">Backed by <span>Global Agri-Leaders</span></h3>
+        </div>
+        <div class="row g-3 justify-content-center align-items-center">
+            {% for partner in ['Syngenta', 'Yara', 'Bayer CropScience', 'Seed Co', 'Omnia', 'BASF Agro'] %}
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="text-center p-3 rounded-3" style="background:var(--white); box-shadow:var(--shadow-sm);">
+                    <div style="font-size:1.4rem; margin-bottom:6px;">🌐</div>
+                    <div style="font-size:0.82rem; font-weight:700; color:var(--text-mid);">{{ partner }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> -->
+
+{% endblock %}
