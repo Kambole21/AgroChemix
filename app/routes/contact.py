@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app
-from flask_mail import Message
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 bp = Blueprint('contact', __name__)
 
@@ -17,56 +18,45 @@ def contact_page():
         farm_size    = data.get('farm_size', 'Not specified')
         message_body = data.get('message', '').strip()
 
-        # Basic validation
         if not name or not phone or not message_body or not enquiry_type:
             flash('Please fill in all required fields.', 'danger')
             return redirect(url_for('contact.contact_page'))
 
-        # Build the email body
         email_body = f"""
 New Contact Form Submission — AgroChemix Website
-=================================================
 
-Name:         {name}
-Phone:        {phone}
-Email:        {email or 'Not provided'}
-Province:     {province}
+Name: {name}
+Phone: {phone}
+Email: {email or 'Not provided'}
+Province: {province}
 Enquiry Type: {enquiry_type}
-Farm Size:    {farm_size}
+Farm Size: {farm_size}
 
 Message:
 {message_body}
-        """.strip()
+        """
 
         try:
-            # Get the mail instance from current_app extensions
-            mail = current_app.extensions.get('mail')
-            if not mail:
-                # Fallback: create a new mail instance (though this shouldn't happen)
-                from flask_mail import Mail
-                mail = Mail()
-                mail.init_app(current_app)
-            
-            # Verify configuration is present
-            if not current_app.config.get('MAIL_USERNAME') or not current_app.config.get('MAIL_PASSWORD'):
-                flash('Mail configuration is incomplete. Please contact support.', 'danger')
-                return redirect(url_for('contact.contact_page'))
-            
-            msg = Message(
+            message = Mail(
+                from_email=current_app.config['MAIL_DEFAULT_SENDER'],
+                to_emails=current_app.config['MAIL_RECIPIENT'],
                 subject=f"[AgroChemix Enquiry] {enquiry_type} — {name}",
-                sender=current_app.config['MAIL_DEFAULT_SENDER'],
-                recipients=[current_app.config['MAIL_RECIPIENT']],  
-                body=email_body,
-                reply_to=email if email else None,
+                plain_text_content=email_body
             )
-            mail.send(msg)
-            flash('Thank you! Your message has been sent. We will get back to you within 24 hours.', 'success')
+
+            if email:
+                message.reply_to = email
+
+            sg = SendGridAPIClient(current_app.config['SENDGRID_API_KEY'])
+            response = sg.send(message)
+
+            if response.status_code in [200, 202]:
+                flash('Thank you! Your message has been sent successfully.', 'success')
+            else:
+                flash('Failed to send email. Please try again later.', 'danger')
+
         except Exception as e:
-            current_app.logger.error(f"Mail send error: {e}")
-            # Provide a user-friendly message instead of debug info
-            flash('Sorry, there was an error sending your message. Please try again later or contact us directly via phone.', 'danger')
-            if current_app.debug:
-                # Only show debug info in development
-                flash(f'Debug: {str(e)}', 'warning')
+            current_app.logger.error(f"SendGrid Error: {e}")
+            flash('Sorry, there was an error sending your message.', 'danger')
 
     return render_template('contact.html')
