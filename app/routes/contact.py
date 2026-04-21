@@ -22,26 +22,44 @@ def contact_page():
             flash('Please fill in all required fields.', 'danger')
             return redirect(url_for('contact.contact_page'))
 
-        email_body = f"""
-New Contact Form Submission — AgroChemix Website
+        html_content = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; background:#f4f6f8; padding:20px;">
+            <div style="max-width:800px; margin:auto; background:white; padding:20px; border-radius:8px;">
 
-Name: {name}
-Phone: {phone}
-Email: {email or 'Not provided'}
-Province: {province}
-Enquiry Type: {enquiry_type}
-Farm Size: {farm_size}
+                <div><img src="https://agrochemix.net/static/icons/agro_logo.jpeg" alt="AgroChemix Logo" style="width:120px; height:130px; display:block; margin:auto;"></div>
+                
+                <h2 style="color:#2e7d32;" class"border-bottom">New Customer Enquiry</h2>
+                
+                <p><strong>Name:</strong> {name}</p>
+                <p><strong>Phone:</strong> {phone}</p>
+                <p><strong>Email:</strong> {email or 'Not provided'}</p>
+                <p><strong>Province:</strong> {province}</p>
+                <p><strong>Enquiry Type:</strong> {enquiry_type}</p>
+                <p><strong>Farm Size:</strong> {farm_size}</p>
 
-Message:
-{message_body}
+                <hr>
+
+                <h3 style="color:#444;" class"bg-gray text-muted">Message</h3>
+                <p style="line-height:1.6; font-size:400;">{message_body}</p>
+
+                <hr>
+
+                <p style="font-size:12px; color:#888;">
+                    This message was sent from the https://agrochemix.net/contact.
+                </p>
+            </div>
+        </body>
+        </html>
         """
+
 
         try:
             message = Mail(
                 from_email=current_app.config['MAIL_DEFAULT_SENDER'],
                 to_emails=current_app.config['MAIL_RECIPIENT'],
                 subject=f"[AgroChemix Enquiry] {enquiry_type} — {name}",
-                plain_text_content=email_body
+                html_content=html_content
             )
 
             if email:
